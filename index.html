@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <style> 
+      a {
+		 text-decoration: none;
+		color: inherit;
+      }
+   </style>
+   <meta name="description" content="this artical presents a problem encountered bu RuBisCO while working on 
+                                     a project in blender. RuBisCO is still new to blender."/>
+   <meta name="viewport" content="width=device-width" />
+   <title>Aprende Con RuBisCO</title>
+ </head>
+ <body style="background: #152238; color: white; font-family: monospace; margin: 30px;" >
+   
+    <nav style= "text-align: center;">
+      <ul style="list-style: none; width: 80%; margin: auto; "> 
+          <li  style="display: inline-block; padding-right:30px;"><a href="undercon.html">Home<a/> |</li>
+          <li  style="display: inline-block; padding-right:30px;"><a href="undercon.html">What is Aprende Con RuBisCO?<a/> |</li>
+          <li  style="display: inline-block; padding-right:30px;"><a href="undercon.html">Subjects <a/>|</li>
+          <li  style="display: inline-block; padding-right:30px;"><a href="undercon.html">Contact me <a/><li/>
+      </ul>
+
+     
+      
+    </nav>
+
+     <div style="margin-top:40px;"><h4><a href="undercon.html" style="opacity: 60%;">Home ><a/><a href="undercon.html" style="opacity: 60%;"> Subjects > <a/> <a href="" style="opacity: 100%;"> Blender </a> </h4></div>
+     <header style="margin-top:40px; margin:auto; text-align: center;">
+        <h1 text-align: center;>The Blender Problem 1069</h1>
+    </header>
+      <main style="margin-top:30px; ">
+           <article style="width: 90%; font-size: 15px; max-width: 700px; display:block; margin:auto; ">
+                  <br/>
+			<h2>Introduction</h2>
+
+                  <p>  Learning requires brains. and learning blender requires aquit lot of them. 
+While working on a  personal project RuBisCO realized he is seriously lacking some. In this article we are going to summerize one of many problems that RuBisCO
+encountered while working with blender for the first time.
+the problem can be encountered by following the following set of steps to achieve a specific result.
+				
+			  
+                  </p>
+
+			<br/>
+			<h2>What Was RuBisCO Even Doing?</h2>
+
+			<p> The aim of the project was to track a 2d plane (an image sequence) in 3d plane with camera using some constrains. </p>
+
+			<br/>
+			<h2>Step 1</h2>
+
+			<p> RubicCO opens a new blender project. deletes the default cube. Now he needs to import an image sequence
+. to do that he uses a simple add-on 'import images as planes'.</p>
+          		<img src="1.png" style="width:95%; max-width:800px; display: block; margin: auto;"/>
+                  <p>While importing, he checks 'Animate Image Sequence', 'Shadeless', 'Camera Fit' and most importantly
+'Track Camera'. </p>
+			<img src="2.png" style="width:95%; max-width:800px; display: block; margin: auto;"/>
+
+   			<br/>
+			<h2>Step 2</h2>
+
+ 			<p>He notices, the image seq has an object constrain 'Copy Rotation' with target set to camera.
+ </p>
+			<img src="3.png" style="width:95%; max-width:800px; display: block; margin: auto;"/>
+			<p>Now he adds a 'Track to' constrain to camera with Timeline as its target</p>
+			<img src="4.png" style="width:95%; max-width:800px; display: block; margin: auto;"/>
+                  <p>Seems to be working fine.</p>
+			<img src="5.gif" style="width:95%; max-width:800px; display: block; margin: auto;"/>
+
+			<br/>
+			<h2>But Here's The Problem</h2>
+
+			<p>He moves to Animation Panal and quickly animates the plane moving. But whats this?
+                  the camera is shaking.</p>
+			<img src="6.gif" style="width:95%; max-width:800px; display: block; margin: auto;"/>
+
+			<p>It seems like the camera cant track or keep up with the moving palne.</p>
+
+			<br/>
+                  <h2>Conclusion</h2>
+                  <p>This seems like more of a limitation than a bug as there is no way the camera 
+                  can track the movement in real time. it calculates it at first and than proceeds
+                  to move.</p>
+                  <p>But the major problem is that the lag persists even when we render the animation.</p>
+                  <p> For now RuBisCO has found a workaround to this problem. He renders each frame one by one
+                      , Which gives the camera time to track the plane's movement. 
+			<p>Legend say that till this date he is still rendering his 20 second animation frame by frame.</p>
+
+
+
+		<article/>
+      <main/>
+      <br/>
+      <footer  style="display:block; margin:auto; opacity:70%; text-align:center;">
+      <p>&copy; 2023 Dinesh Kumar. All rights reserved.</p>
+      </footer>
+   
+ </body>
+</html>
